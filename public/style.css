@@ -1,0 +1,87 @@
+html {
+  background: rgb(94,112,129);
+  background: linear-gradient(135deg, rgba(94,112,129,1) 0%, rgba(63,82,99,1) 100%);
+  height: 100vh;
+  width: 100vw;
+}
+
+body, #main {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.frame {
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+  width: 300px;
+  height: 200px
+}
+
+.frame-title {
+  background: rgb(48, 48, 48);
+  color: white;
+  border-bottom: 1px solid #ccc;
+  height: 23px;
+}
+
+.frame-body {
+  overflow: auto;
+  background: rgb(48, 48, 48);
+  color: white;
+  height: calc(100% - 48px);
+}
+
+.frame-status {
+  background: rgb(48, 48, 48);
+  color: white;
+  border-top: 1px solid #ccc;
+  height: 23px;
+}
+
+pre {
+  overflow: auto;
+  background: rgb(48, 48, 48);
+  color: white;
+  border: 1px solid #ccc;
+  max-height: 45vh;
+  width: 49%;
+  font-size: 14px;
+  font-family: monospace;
+  padding: 1vh 0.5vw;
+  white-space: pre-wrap;
+  outline: 0;
+  margin: 1vh 0.5vw;
+}
+
+.frame *::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+.frame *::-webkit-scrollbar-track {
+  background: rgb(48, 48, 48);
+}
+ 
+/* Handle */
+.frame *::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  border: 3px solid rgb(48, 48, 48); 
+  background: #ccc; 
+}
+
+/* Handle on hover */
+.frame *::-webkit-scrollbar-thumb:hover {
+  background: #ccc; 
+}
+
+pre > span {
+  height: 1px;
+  width: 1px;
+}
