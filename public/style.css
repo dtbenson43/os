@@ -12,15 +12,40 @@ body, #main {
   height: 100%;
   width: 100%;
   margin: 0;
+  overflow: hidden;
+}
+
+/* #main > .frame:last-child {
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+  transform: translate(10px, 10px);
+} */
+
+.frame-no-shadow {
+  box-shadow: none !important;
 }
 
 .frame {
+  position: absolute;
   overflow: hidden;
   border-radius: 4px;
   border: 1px solid #ccc;
+  font-family: monospace;
+  box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.5);
+  transition: transform 150ms;
+}
+
+.frame-shadow {
   box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
-  width: 300px;
-  height: 200px
+  transform: translate(1px, 1px);
+}
+
+.frame-resize {
+  position: absolute;
+  left: calc(100% - 8px);
+  top: calc(100% - 13px);
+  color: #ccc;
+  transform: rotate(45deg);
+  cursor: nwse-resize;
 }
 
 .frame-title {
@@ -28,13 +53,22 @@ body, #main {
   color: white;
   border-bottom: 1px solid #ccc;
   height: 23px;
+  overflow: hidden;
+}
+
+.frame-title-text {
+  font-size: 16px;
+  white-space: nowrap;
+  user-select: none;
+  margin-top: 1px;
+  margin-left: 6px;
 }
 
 .frame-body {
   overflow: auto;
   background: rgb(48, 48, 48);
   color: white;
-  height: calc(100% - 48px);
+  height: 100%;
 }
 
 .frame-status {
@@ -84,4 +118,22 @@ pre {
 pre > span {
   height: 1px;
   width: 1px;
+}
+
+.grid-container {
+  position: relative;
+  height: 100%;
+}
+
+.grid-row, .grid-col {
+  position: relative;
+}
+
+.grid-col {
+  height: 100%;
+}
+
+.grid-row {
+  width: 100%;
+  display: flex;
 }
